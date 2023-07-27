@@ -10,8 +10,8 @@ import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
-    let emailTextField = SATextField(text: "123@123.com", background: .gray)
-    let passwordTextField = SATextField(text: "123456", background: .gray)
+    let emailTextField = SATextField(text: "123@123.com", background: .white)
+    let passwordTextField = SATextField(text: "123456", background: .white)
 
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
@@ -23,15 +23,17 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemBackground
         title = "Fitness Tracker App"
         setup()
     }
 
     private func setup() {
         passwordTextField.isSecureTextEntry = true
+        emailTextField.placeholder = "Email"
+        passwordTextField.placeholder = "password"
 
-        let registerButton = SAButton(backgroundColor: .blue, title: "Register", action: UIAction(handler: { register in
+        let registerButton = SAButton(backgroundColor: UIColor(named: "ButtonRegister"), title: "Register", action: UIAction(handler: { register in
             self.registerAction()
         }))
 

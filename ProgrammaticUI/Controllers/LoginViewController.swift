@@ -9,8 +9,8 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-    let emailTextField = SATextField(text: "123@123.com", background: .gray)
-    let passwordTextField = SATextField(text: "123456", background: .gray)
+    let emailTextField = SATextField(text: "123@123.com", background: .white)
+    let passwordTextField = SATextField(text: "123456", background: .white)
 
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
@@ -22,15 +22,16 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemBackground
         title = "Fitness Tracker App"
         setup()
     }
 
     private func setup() {
         passwordTextField.isSecureTextEntry = true
-
-        let loginButton = SAButton(backgroundColor: .blue, title: "Log In", action: UIAction(handler: { register in
+        emailTextField.placeholder = "Email"
+        passwordTextField.placeholder = "password"
+        let loginButton = SAButton(backgroundColor: UIColor(named: "ButtonLogin"), title: "Log In", action: UIAction(handler: { register in
             self.loginAction()
         }))
 

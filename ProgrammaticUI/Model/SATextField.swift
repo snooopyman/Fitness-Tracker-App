@@ -26,7 +26,6 @@ class SATextField: UITextField {
 
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
-        borderStyle = UITextField.BorderStyle.line
-        isSecureTextEntry = false
+        borderStyle = .bezel
     }
 }

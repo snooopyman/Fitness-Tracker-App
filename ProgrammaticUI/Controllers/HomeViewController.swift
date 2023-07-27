@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         stackView.spacing = 20
 
         addSummaryStackToStackView() // Stack para resumen diario y gráfica
-        addGoalsStackToStackView() // Stack horizontal para metas
+        //addGoalsStackToStackView() // Stack horizontal para metas
 
         setStackViewConstraints()
     }
@@ -38,73 +38,73 @@ class HomeViewController: UIViewController {
     func addSummaryStackToStackView() {
         let summaryStack = UIStackView()
         summaryStack.axis = .vertical
-        summaryStack.spacing = 10
+        summaryStack.spacing = 15
+        summaryStack.distribution = .fillProportionally
 
-        // Agregar el label "Summary"
         let summaryLabel = UILabel()
         summaryLabel.text = "Summary"
-        summaryLabel.font = .boldSystemFont(ofSize: 20)
+        //summaryLabel.font = .boldSystemFont(ofSize: 40)
+        summaryLabel.font = UIFont(name: "AvenirNext-DemiBoldItalic", size: 48)
         summaryStack.addArrangedSubview(summaryLabel)
 
-        // Agregar componentes para el resumen diario (Kms, Calorías, Duración)
         let kmsLabel = UILabel()
-        kmsLabel.text = "Kms realizados: 5.2"
+        kmsLabel.text = "Kms: 5.2"
         summaryStack.addArrangedSubview(kmsLabel)
 
         let caloriesLabel = UILabel()
-        caloriesLabel.text = "Calorías quemadas: 300"
+        caloriesLabel.text = "Calories: 300"
         summaryStack.addArrangedSubview(caloriesLabel)
 
         let durationLabel = UILabel()
-        durationLabel.text = "Duración de ejercicios: 1h 15m"
+        durationLabel.text = "Duration: 1h 15m"
         summaryStack.addArrangedSubview(durationLabel)
 
-        // Agregar aquí la gráfica (puedes usar una librería de gráficos o construir tu propia vista personalizada)
         summaryStack.addArrangedSubview(imageFitness)
 
-        // Agregar restricciones para el espaciado interno del summaryStack
-        summaryStack.isLayoutMarginsRelativeArrangement = true
-        summaryStack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        //summaryStack.isLayoutMarginsRelativeArrangement = true
+        //summaryStack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
 
         stackView.addArrangedSubview(summaryStack)
     }
+    /*
+     func addGoalsStackToStackView() {
+     let goalsStack = UIStackView()
+     goalsStack.axis = .horizontal
+     goalsStack.spacing = 10
 
-    func addGoalsStackToStackView() {
-        let goalsStack = UIStackView()
-        goalsStack.axis = .horizontal
-        goalsStack.spacing = 10
+     // Agregar el label "Goals"
+     let goalsLabel = UILabel()
+     goalsLabel.text = "Goals"
+     goalsLabel.font = .boldSystemFont(ofSize: 20)
+     goalsStack.addArrangedSubview(goalsLabel)
 
-        // Agregar el label "Goals"
-        let goalsLabel = UILabel()
-        goalsLabel.text = "Goals"
-        goalsLabel.font = .boldSystemFont(ofSize: 20)
-        goalsStack.addArrangedSubview(goalsLabel)
+     // Agregar componentes para las metas (Kms a realizar, Calorías a alcanzar, Duración de ejercicios)
+     let kmsGoalLabel = UILabel()
+     kmsGoalLabel.text = "Kms: 10"
+     goalsStack.addArrangedSubview(kmsGoalLabel)
 
-        // Agregar componentes para las metas (Kms a realizar, Calorías a alcanzar, Duración de ejercicios)
-        let kmsGoalLabel = UILabel()
-        kmsGoalLabel.text = "Kms: 10"
-        goalsStack.addArrangedSubview(kmsGoalLabel)
+     let caloriesGoalLabel = UILabel()
+     caloriesGoalLabel.text = "Calories: 500"
+     goalsStack.addArrangedSubview(caloriesGoalLabel)
 
-        let caloriesGoalLabel = UILabel()
-        caloriesGoalLabel.text = "Calories: 500"
-        goalsStack.addArrangedSubview(caloriesGoalLabel)
+     let durationGoalLabel = UILabel()
+     durationGoalLabel.text = "Duration: 2h"
+     goalsStack.addArrangedSubview(durationGoalLabel)
 
-        let durationGoalLabel = UILabel()
-        durationGoalLabel.text = "Duration: 2h"
-        goalsStack.addArrangedSubview(durationGoalLabel)
+     // Agregar restricciones para el espaciado interno del goalsStack
+     goalsStack.isLayoutMarginsRelativeArrangement = true
+     goalsStack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
 
-        // Agregar restricciones para el espaciado interno del goalsStack
-        goalsStack.isLayoutMarginsRelativeArrangement = true
-        goalsStack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
-
-        stackView.addArrangedSubview(goalsStack)
-    }
+     stackView.addArrangedSubview(goalsStack)
+     }
+     */
 
     func setStackViewConstraints() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
+
 }
