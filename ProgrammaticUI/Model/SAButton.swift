@@ -6,6 +6,11 @@
 //
 import UIKit
 
+/*
+protocol SAButtonViewControllerDelegate {
+    func nextScreen(controller: UIViewController)
+}*/
+
 class SAButton: UIButton {
 
     override init(frame: CGRect) {

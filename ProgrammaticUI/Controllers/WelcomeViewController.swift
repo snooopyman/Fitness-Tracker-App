@@ -9,32 +9,12 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    private lazy var titleLabel: UILabel = {
-        let title = UILabel()
-        title.text = ""
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.font = .boldSystemFont(ofSize: 35)
-        return title
-    }()
-
-    private lazy var imageFitness: UIImageView = {
-        let imageName = "fitness.png"
-
-        guard let image = UIImage(named: imageName) else {
-            fatalError("No se ha cargado la imagen")
-        }
-
-        let imageView = UIImageView(image: image)
-
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-
-        return imageView
-    }()
+    private let titleLabel = SALabel(texto: "", font: .boldSystemFont(ofSize: 35))
+    private let imageFitness = SAImageView(imageNamed: "fitness.png")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        animateTitleLabel()
         setUp()
     }
 
@@ -73,6 +53,8 @@ class WelcomeViewController: UIViewController {
             registerButton.widthAnchor.constraint(equalToConstant: 300),
             registerButton.heightAnchor.constraint(equalToConstant: 60)
         ])
+
+        animateTitleLabel()
     }
 
     private func animateTitleLabel() {
