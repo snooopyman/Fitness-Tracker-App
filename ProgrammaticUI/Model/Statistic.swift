@@ -10,7 +10,7 @@ import Foundation
 struct Stadistic {
     let km: Double
     let calories: Int
-    let duration: Calendar
+    let duration: String
 
     var kmString: String {
         return String(format: "%.1f", km)
