@@ -12,7 +12,7 @@ class RegisterViewController: UIViewController {
 
     private let emailTextField = SATextField(text: "123@123.com", background: .white)
     private let passwordTextField = SATextField(text: "123456", background: .white)
-    private let titleLabel = SALabel(texto: "Register", font: .boldSystemFont(ofSize: 35))
+    private let titleLabel = SALabel(text: "Register", token: .heading)
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 protocol InsertDataViewControllerDelegate: AnyObject {
     func didInsertData(_ data: Stadistic)
@@ -77,8 +78,15 @@ class InsertDataViewController: UIViewController {
         }
 
         let data = Stadistic(km: km, calories: calories, duration: durationText)
+
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let statisticsRef = ref.child("statistics").childByAutoId()
+        statisticsRef.setValue(data.toDictionary())
+
         delegate?.didInsertData(data)
         navigationController?.popViewController(animated: true)
+
     }
 
 }

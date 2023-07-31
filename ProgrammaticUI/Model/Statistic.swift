@@ -16,4 +16,11 @@ struct Stadistic {
         return String(format: "%.1f", km)
     }
 
+    func toDictionary() -> [String: Any] {
+            return [
+                "km": km,
+                "calories": calories,
+                "duration": duration
+            ]
+        }
 }

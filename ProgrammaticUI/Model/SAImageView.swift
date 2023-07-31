@@ -9,6 +9,8 @@ import UIKit
 
 class SAImageView: UIImageView {
 
+    static let fitnessImage = SAImageView(imageNamed: "fitness.png")
+
     override init(image: UIImage?) {
         super.init(image: image)
         configure()
