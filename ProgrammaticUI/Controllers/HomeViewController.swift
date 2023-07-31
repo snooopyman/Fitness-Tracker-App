@@ -2,12 +2,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    let stackView = UIStackView()
-    private var kmsLabel: UILabel!
-    private var caloriesLabel: UILabel!
-    private var durationLabel: UILabel!
-    let imageFitness = SAImageView(imageNamed: "fitness.png")
-    var insertData = InsertDataViewController()
+    private let stackView = UIStackView()
+    private let summaryLabel = SALabel(texto: "Summary", font: .boldSystemFont(ofSize: 40))
+    private var kmsLabel = SALabel(texto: "Kms: 0.0", font: .systemFont(ofSize: 20))
+    private var caloriesLabel = SALabel(texto: "Calories: 0", font: .systemFont(ofSize: 20))
+    private var durationLabel = SALabel(texto: "Duration: 00:00:00", font: .systemFont(ofSize: 20))
+    private let imageFitness = SAImageView(imageNamed: "fitness.png")
+    private var insertData = InsertDataViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class HomeViewController: UIViewController {
         addEditDataButton()
     }
 
-    func configureStackView() {
+    private func configureStackView() {
         view.addSubview(stackView)
         stackView.axis = .vertical
         stackView.spacing = 20
@@ -29,34 +30,21 @@ class HomeViewController: UIViewController {
         setStackViewConstraints()
     }
 
-    func addSummaryStackToStackView() {
+    private func addSummaryStackToStackView() {
         let summaryStack = UIStackView()
         summaryStack.axis = .vertical
         summaryStack.spacing = 15
         summaryStack.distribution = .fillProportionally
 
-        let summaryLabel = UILabel()
-        summaryLabel.text = "Summary"
-        summaryLabel.font = .boldSystemFont(ofSize: 40)
-        //summaryLabel.font = UIFont(name: "AvenirNext-DemiBoldItalic", size: 48)
         summaryStack.addArrangedSubview(summaryLabel)
-
-        kmsLabel = UILabel()
-        caloriesLabel = UILabel()
-        durationLabel = UILabel()
         summaryStack.addArrangedSubview(kmsLabel)
         summaryStack.addArrangedSubview(caloriesLabel)
         summaryStack.addArrangedSubview(durationLabel)
-        //summaryStack.addArrangedSubview(imageFitness)
-        stackView.addArrangedSubview(summaryStack)
 
-        // Set initial label values (you can set your own initial values if needed)
-        kmsLabel.text = "Kms: 0.0"
-        caloriesLabel.text = "Calories: 0"
-        durationLabel.text = "Duration: 00:00:00"
+        stackView.addArrangedSubview(summaryStack)
     }
 
-    func setStackViewConstraints() {
+    private func setStackViewConstraints() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50).isActive = true
@@ -64,14 +52,14 @@ class HomeViewController: UIViewController {
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
-    func addEditDataButton() {
+    private func addEditDataButton() {
         let editDataButton = SAButton(backgroundColor: .systemGreen, title: "Edit Data", action: UIAction(handler: { [weak self] _ in
             self?.editDataButtonTapped()
         }))
         stackView.addArrangedSubview(editDataButton)
     }
 
-    @objc func editDataButtonTapped() {
+    private func editDataButtonTapped() {
         let insertDataVC = InsertDataViewController()
         insertDataVC.delegate = self
         navigationController?.pushViewController(insertDataVC, animated: true)
