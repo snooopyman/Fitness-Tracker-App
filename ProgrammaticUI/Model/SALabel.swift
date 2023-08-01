@@ -17,13 +17,14 @@ class SALabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(texto: String, font: UIFont) {
+    convenience init(text: String, token: SAFontToken) {
         self.init(frame: .zero)
-        self.text = texto
-        self.font = font
+        self.text = text
+        self.font = token.font
     }
 
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
+

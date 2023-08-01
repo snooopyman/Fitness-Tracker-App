@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 protocol InsertDataViewControllerDelegate: AnyObject {
     func didInsertData(_ data: Stadistic)
@@ -33,9 +34,9 @@ class InsertDataViewController: UIViewController {
     }
 
     private func configureUI() {
-        kmTextField.placeholder = "Enter Kms"
-        caloriesTextField.placeholder = "Enter Calories"
-        durationTextField.placeholder = "Enter Duration Of Training"
+        kmTextField.placeholder = "Kms"
+        caloriesTextField.placeholder = "Calories"
+        durationTextField.placeholder = "Duration Of Training"
         view.addSubview(kmTextField)
         view.addSubview(caloriesTextField)
         view.addSubview(durationTextField)
@@ -65,7 +66,7 @@ class InsertDataViewController: UIViewController {
         ])
     }
 
-    func saveData() {
+    private func saveData() {
         guard
             let kmText = kmTextField.text,
             let caloriesText = caloriesTextField.text,
@@ -77,8 +78,15 @@ class InsertDataViewController: UIViewController {
         }
 
         let data = Stadistic(km: km, calories: calories, duration: durationText)
+
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let statisticsRef = ref.child("statistics").childByAutoId()
+        statisticsRef.setValue(data.toDictionary())
+
         delegate?.didInsertData(data)
         navigationController?.popViewController(animated: true)
+
     }
 
 }

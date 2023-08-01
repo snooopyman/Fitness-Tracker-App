@@ -9,8 +9,8 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    private let titleLabel = SALabel(texto: "", font: .boldSystemFont(ofSize: 35))
-    private let imageFitness = SAImageView(imageNamed: "fitness.png")
+    private let titleLabel = SALabel(text: "", token: .title)
+    private let imageFitness = SAImageView.fitnessImage
 
     override func viewDidLoad() {
         super.viewDidLoad()
