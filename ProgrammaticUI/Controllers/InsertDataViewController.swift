@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 protocol InsertDataViewControllerDelegate: AnyObject {
     func didInsertData(_ data: Stadistic)
@@ -16,9 +17,10 @@ class InsertDataViewController: UIViewController {
 
     weak var delegate: InsertDataViewControllerDelegate?
 
-    let kmTextField = SATextField(text: "", background: .white)
-    let caloriesTextField = SATextField(text: "", background: .white)
-    let durationTextField = SATextField(text: "", background: .white)
+    private let titleLabel = SALabel(text: "Edit your statistics", token: .title)
+    private let kmTextField = SATextField(text: "", background: .white)
+    private let caloriesTextField = SATextField(text: "", background: .white)
+    private let durationTextField = SATextField(text: "", background: .white)
 
     private lazy var saveButton: SAButton = {
         let button = SAButton(backgroundColor: .systemBlue, title: "Save", action: UIAction(handler: { [weak self] _ in
@@ -29,41 +31,28 @@ class InsertDataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         configureUI()
     }
 
     private func configureUI() {
+        view.backgroundColor = .white
+
         kmTextField.placeholder = "Kms"
         caloriesTextField.placeholder = "Calories"
         durationTextField.placeholder = "Duration Of Training"
-        view.addSubview(kmTextField)
-        view.addSubview(caloriesTextField)
-        view.addSubview(durationTextField)
-        view.addSubview(saveButton)
+        
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, kmTextField, caloriesTextField, durationTextField, saveButton])
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            durationTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            durationTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -500),
-            durationTextField.widthAnchor.constraint(equalToConstant: 300),
-            durationTextField.heightAnchor.constraint(equalToConstant: 60),
-
-            caloriesTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            caloriesTextField.bottomAnchor.constraint(equalTo: durationTextField.bottomAnchor, constant: -70),
-            caloriesTextField.widthAnchor.constraint(equalToConstant: 300),
-            caloriesTextField.heightAnchor.constraint(equalToConstant: 60),
-
-
-            kmTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            kmTextField.bottomAnchor.constraint(equalTo: caloriesTextField.bottomAnchor, constant: -70),
-            kmTextField.widthAnchor.constraint(equalToConstant: 300),
-            kmTextField.heightAnchor.constraint(equalToConstant: 60),
-
-            saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            saveButton.widthAnchor.constraint(equalToConstant: 200),
-            saveButton.heightAnchor.constraint(equalToConstant: 50)
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+
     }
 
     private func saveData() {
@@ -79,14 +68,25 @@ class InsertDataViewController: UIViewController {
 
         let data = Stadistic(km: km, calories: calories, duration: durationText)
 
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        let statisticsRef = ref.child("statistics").childByAutoId()
-        statisticsRef.setValue(data.toDictionary())
+
+        guard let userEmail = Auth.auth().currentUser?.email else {
+            fatalError("User not authenticated.")
+        }
+
+        let username = getUsername(from: userEmail)
+        let ref = Database.database().reference().child("users").child(username)
+        ref.setValue(data.toDictionary())
 
         delegate?.didInsertData(data)
         navigationController?.popViewController(animated: true)
 
     }
 
+    private func getUsername(from email: String) -> String {
+        guard let username = email.split(separator: "@").first else {
+            fatalError("Invalid email format.")
+        }
+        return String(username)
+    }
 }
+
