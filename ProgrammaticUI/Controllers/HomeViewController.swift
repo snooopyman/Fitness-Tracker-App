@@ -1,5 +1,6 @@
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
 
@@ -28,6 +29,7 @@ class HomeViewController: UIViewController {
     private func configureStackView() {
         view.addSubview(stackView)
 
+        loadData()
         addSummaryStackToStackView()
         setStackViewConstraints()
     }
@@ -65,6 +67,39 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(insertDataVC, animated: true)
     }
 
+    private func loadData() {
+        guard let userEmail = Auth.auth().currentUser?.email else {
+            fatalError("User not authenticated.")
+        }
+
+        let ref = Database.database().reference().child("users").child(getUsername(from: userEmail))
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            guard let self = self, let dataDict = snapshot.value as? [String: Any] else {
+                return
+            }
+
+            if let km = dataDict["km"] as? Double {
+                self.kmsLabel.text = "Kms: \(km)"
+            }
+
+            if let calories = dataDict["calories"] as? Int {
+                self.caloriesLabel.text = "Calories: \(calories)"
+            }
+
+            if let duration = dataDict["duration"] as? String {
+                self.durationLabel.text = "Duration: \(duration)"
+            }
+        })
+    }
+
+    private func getUsername(from email: String) -> String {
+        guard let username = email.split(separator: "@").first else {
+            fatalError("Invalid email format.")
+        }
+        return String(username)
+    }
+
+    
 }
 
 // MARK: - InsertDataViewControllerDelegate
