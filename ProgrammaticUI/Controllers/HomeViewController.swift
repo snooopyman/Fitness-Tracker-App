@@ -75,4 +75,3 @@ extension HomeViewController: InsertDataViewControllerDelegate {
         durationLabel.text = "Duration: \(data.duration)"
     }
 }
-
