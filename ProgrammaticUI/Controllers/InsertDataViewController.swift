@@ -68,6 +68,7 @@ class InsertDataViewController: UIViewController {
 
         let data = Stadistic(km: km, calories: calories, duration: durationText)
 
+
         guard let userEmail = Auth.auth().currentUser?.email else {
             fatalError("User not authenticated.")
         }
@@ -78,8 +79,8 @@ class InsertDataViewController: UIViewController {
 
         delegate?.didInsertData(data)
         navigationController?.popViewController(animated: true)
-    }
 
+    }
 
     private func getUsername(from email: String) -> String {
         guard let username = email.split(separator: "@").first else {
