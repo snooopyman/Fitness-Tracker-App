@@ -7,12 +7,13 @@
 
 import UIKit
 import FirebaseAuth
+import DesignSystem
 
 class LoginViewController: UIViewController {
 
-    private let emailTextField = SATextField(text: "123@123.com", background: .white)
-    private let passwordTextField = SATextField(text: "123456", background: .white)
-    private let titleLabel = SALabel(text: "Log In", token: .title)
+    private let emailTextField = DesignSystem.SATextField(text: "123@123.com", background: .white)
+    private let passwordTextField = DesignSystem.SATextField(text: "123456", background: .white)
+    private let titleLabel = DesignSystem.SALabel(text: "Log In", token: .title)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class LoginViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
         emailTextField.placeholder = "Email"
         passwordTextField.placeholder = "password"
-        let loginButton = SAButton(backgroundColor: UIColor(named: "ButtonLogin"), title: "Log In", action: UIAction(handler: { register in
+        let loginButton = DesignSystem.SAButton(backgroundColor: UIColor(named: "ButtonLogin"), title: "Log In", action: UIAction(handler: { register in
             self.loginAction()
         }))
 

@@ -1,13 +1,15 @@
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import DesignSystem
 
 class HomeViewController: UIViewController {
 
-    private let summaryLabel = SALabel(text: "Summary", token: .title)
-    private var kmsLabel = SALabel(text: "Kms: 0.0", token: .heading)
-    private var caloriesLabel = SALabel(text: "Calories: 0", token: .heading)
-    private var durationLabel = SALabel(text: "Duration: 00:00:00", token: .heading)
-    private let imageFitness = SAImageView.fitnessImage
+    private let summaryLabel = DesignSystem.SALabel(text: "Summary", token: .title)
+    private var kmsLabel = DesignSystem.SALabel(text: "Kms: 0.0", token: .heading)
+    private var caloriesLabel = DesignSystem.SALabel(text: "Calories: 0", token: .heading)
+    private var durationLabel = DesignSystem.SALabel(text: "Duration: 00:00:00", token: .heading)
+    private let imageFitness = DesignSystem.SAImageView.fitnessImage
     private var insertDataVC = InsertDataViewController()
     private let stackView = {
         let stack = UIStackView()
@@ -21,6 +23,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
 
+        loadData()
         configureStackView()
         addEditDataButton()
     }
@@ -65,14 +68,45 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(insertDataVC, animated: true)
     }
 
+    private func loadData() {
+        guard let userEmail = Auth.auth().currentUser?.email else {
+            fatalError("User not authenticated.")
+        }
+
+        let ref = Database.database().reference().child("users").child(getUsername(from: userEmail))
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            guard let self = self, let data = snapshot.value as? [String: Any] else {
+                return
+            }
+
+            if let km = data["km"] as? Double {
+                self.kmsLabel.text = "Kms: \(km)"
+            }
+
+            if let calories = data["calories"] as? Int {
+                self.caloriesLabel.text = "Calories: \(calories)"
+            }
+
+            if let duration = data["duration"] as? String {
+                self.durationLabel.text = "Duration: \(duration)"
+            }
+        })
+    }
+
+    private func getUsername(from email: String) -> String {
+        guard let username = email.split(separator: "@").first else {
+            fatalError("Invalid email format.")
+        }
+        return String(username)
+    }
+
 }
 
 // MARK: - InsertDataViewControllerDelegate
 extension HomeViewController: InsertDataViewControllerDelegate {
-    func didInsertData(_ data: Stadistic) {
+    func inserDataViewController(_ insertDataViewController: InsertDataViewController, didInsertData data: Stadistic) {
         kmsLabel.text = "Kms: \(data.kmString)"
         caloriesLabel.text = "Calories: \(data.calories)"
         durationLabel.text = "Duration: \(data.duration)"
     }
 }
-

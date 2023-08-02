@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class SAImageView: UIImageView {
+class SAImageView: UIImageView {
 
     static let fitnessImage = SAImageView(imageNamed: "fitness.png")
 

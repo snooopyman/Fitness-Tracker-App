@@ -6,7 +6,7 @@
 //
 import UIKit
 
-public class SAButton: UIButton {
+class SAButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

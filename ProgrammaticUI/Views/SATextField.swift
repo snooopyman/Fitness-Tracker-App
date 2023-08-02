@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class SATextField: UITextField {
+class SATextField: UITextField {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
