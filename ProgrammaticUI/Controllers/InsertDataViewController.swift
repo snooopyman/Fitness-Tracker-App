@@ -8,22 +8,23 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import DesignSystem
 
 protocol InsertDataViewControllerDelegate: AnyObject {
-    func didInsertData(_ data: Stadistic)
+    func inserDataViewController(_ insertDataViewController: InsertDataViewController, didInsertData data: Stadistic)
 }
 
 class InsertDataViewController: UIViewController {
 
     weak var delegate: InsertDataViewControllerDelegate?
 
-    private let titleLabel = SALabel(text: "Edit your statistics", token: .title)
-    private let kmTextField = SATextField(text: "", background: .white)
-    private let caloriesTextField = SATextField(text: "", background: .white)
-    private let durationTextField = SATextField(text: "", background: .white)
+    private let titleLabel = DesignSystem.SALabel(text: "Edit your statistics", token: .title)
+    private let kmTextField = DesignSystem.SATextField(text: "", background: .white)
+    private let caloriesTextField = DesignSystem.SATextField(text: "", background: .white)
+    private let durationTextField = DesignSystem.SATextField(text: "", background: .white)
 
     private lazy var saveButton: SAButton = {
-        let button = SAButton(backgroundColor: .systemBlue, title: "Save", action: UIAction(handler: { [weak self] _ in
+        let button = DesignSystem.SAButton(backgroundColor: .systemBlue, title: "Save", action: UIAction(handler: { [weak self] _ in
             self?.saveData()
         }))
         return button
@@ -77,7 +78,7 @@ class InsertDataViewController: UIViewController {
         let ref = Database.database().reference().child("users").child(username)
         ref.setValue(data.toDictionary())
 
-        delegate?.didInsertData(data)
+        delegate?.inserDataViewController(self, didInsertData: data)
         navigationController?.popViewController(animated: true)
 
     }

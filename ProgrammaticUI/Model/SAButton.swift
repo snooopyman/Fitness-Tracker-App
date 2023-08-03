@@ -4,25 +4,21 @@
 //
 //  Created by Jesús Armando Cáceres Vilchez on 26/7/23.
 //
+
 import UIKit
 
-/*
-protocol SAButtonViewControllerDelegate {
-    func nextScreen(controller: UIViewController)
-}*/
-
-class SAButton: UIButton {
-
-    override init(frame: CGRect) {
+public class SAButton: UIButton {
+    
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented.")
     }
 
-    convenience init(backgroundColor: UIColor?, title: String, action: UIAction) {
+    public convenience init(backgroundColor: UIColor?, title: String, action: UIAction) {
         self.init(frame: .zero)
         self.backgroundColor = backgroundColor ?? .clear
         self.setTitle(title, for: .normal)

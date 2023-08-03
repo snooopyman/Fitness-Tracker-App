@@ -17,10 +17,10 @@ struct Stadistic {
     }
 
     func toDictionary() -> [String: Any] {
-            return [
-                "km": km,
-                "calories": calories,
-                "duration": duration
-            ]
-        }
+        return [
+            "km": km,
+            "calories": calories,
+            "duration": duration
+        ]
+    }
 }

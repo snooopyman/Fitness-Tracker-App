@@ -10,17 +10,12 @@
 		2A081EB12A78091100836168 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2A081EB02A78091100836168 /* FirebaseDatabase */; };
 		2A58385F2A6FD51000E137F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58385E2A6FD51000E137F8 /* LoginViewController.swift */; };
 		2A5838612A701B8100E137F8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5838602A701B8100E137F8 /* RegisterViewController.swift */; };
-		2AD897F12A71AC72003B2A47 /* SAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD897F02A71AC72003B2A47 /* SAButton.swift */; };
-		2AD897F52A7242DB003B2A47 /* SATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD897F42A7242DB003B2A47 /* SATextField.swift */; };
+		2AD4911F2A7BF604003BF5D1 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD4911E2A7BF604003BF5D1 /* DesignSystem */; };
 		2AD897F72A7255DF003B2A47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD897F62A7255DF003B2A47 /* GoogleService-Info.plist */; };
 		2AD897FA2A725707003B2A47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD897F92A725707003B2A47 /* FirebaseAuth */; };
-		2AD897FC2A725707003B2A47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD897FB2A725707003B2A47 /* FirebaseFirestore */; };
 		2AD898002A725B49003B2A47 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD897FF2A725B49003B2A47 /* HomeViewController.swift */; };
 		2AD898082A730B8D003B2A47 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD898072A730B8D003B2A47 /* Statistic.swift */; };
 		2AD8980A2A73982D003B2A47 /* InsertDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD898092A73982D003B2A47 /* InsertDataViewController.swift */; };
-		2AD8980C2A73AEEB003B2A47 /* SAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8980B2A73AEEB003B2A47 /* SAImageView.swift */; };
-		2AD8980E2A73DB89003B2A47 /* SALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8980D2A73DB89003B2A47 /* SALabel.swift */; };
-		2AD898102A77D060003B2A47 /* SALabelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8980F2A77D060003B2A47 /* SALabelToken.swift */; };
 		2AEB202C2A6EFE8F00A3B014 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB202B2A6EFE8F00A3B014 /* AppDelegate.swift */; };
 		2AEB202E2A6EFE8F00A3B014 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB202D2A6EFE8F00A3B014 /* SceneDelegate.swift */; };
 		2AEB20302A6EFE8F00A3B014 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB202F2A6EFE8F00A3B014 /* WelcomeViewController.swift */; };
@@ -31,15 +26,11 @@
 /* Begin PBXFileReference section */
 		2A58385E2A6FD51000E137F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2A5838602A701B8100E137F8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		2AD897F02A71AC72003B2A47 /* SAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAButton.swift; sourceTree = "<group>"; };
-		2AD897F42A7242DB003B2A47 /* SATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATextField.swift; sourceTree = "<group>"; };
+		2AD4911D2A7BF5AC003BF5D1 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../../DesignSystem; sourceTree = "<group>"; };
 		2AD897F62A7255DF003B2A47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2AD897FF2A725B49003B2A47 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2AD898072A730B8D003B2A47 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		2AD898092A73982D003B2A47 /* InsertDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertDataViewController.swift; sourceTree = "<group>"; };
-		2AD8980B2A73AEEB003B2A47 /* SAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAImageView.swift; sourceTree = "<group>"; };
-		2AD8980D2A73DB89003B2A47 /* SALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SALabel.swift; sourceTree = "<group>"; };
-		2AD8980F2A77D060003B2A47 /* SALabelToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SALabelToken.swift; sourceTree = "<group>"; };
 		2AEB20282A6EFE8F00A3B014 /* ProgrammaticUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammaticUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEB202B2A6EFE8F00A3B014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AEB202D2A6EFE8F00A3B014 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +45,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD4911F2A7BF604003BF5D1 /* DesignSystem in Frameworks */,
 				2A081EB12A78091100836168 /* FirebaseDatabase in Frameworks */,
 				2AD897FA2A725707003B2A47 /* FirebaseAuth in Frameworks */,
-				2AD897FC2A725707003B2A47 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +73,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		2AD4911C2A7BF591003BF5D1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4911D2A7BF5AC003BF5D1 /* DesignSystem */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		2AD897F22A72420C003B2A47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,12 +91,7 @@
 		2AD897F32A72421A003B2A47 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2AD897F02A71AC72003B2A47 /* SAButton.swift */,
-				2AD897F42A7242DB003B2A47 /* SATextField.swift */,
 				2AD898072A730B8D003B2A47 /* Statistic.swift */,
-				2AD8980B2A73AEEB003B2A47 /* SAImageView.swift */,
-				2AD8980D2A73DB89003B2A47 /* SALabel.swift */,
-				2AD8980F2A77D060003B2A47 /* SALabelToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +99,7 @@
 		2AEB201F2A6EFE8F00A3B014 = {
 			isa = PBXGroup;
 			children = (
+				2AD4911C2A7BF591003BF5D1 /* Module */,
 				2AEB202A2A6EFE8F00A3B014 /* ProgrammaticUI */,
 				2AEB20292A6EFE8F00A3B014 /* Products */,
 				2A081EAF2A7808E900836168 /* Frameworks */,
@@ -153,8 +148,8 @@
 			name = ProgrammaticUI;
 			packageProductDependencies = (
 				2AD897F92A725707003B2A47 /* FirebaseAuth */,
-				2AD897FB2A725707003B2A47 /* FirebaseFirestore */,
 				2A081EB02A78091100836168 /* FirebaseDatabase */,
+				2AD4911E2A7BF604003BF5D1 /* DesignSystem */,
 			);
 			productName = ProgrammaticUI;
 			productReference = 2AEB20282A6EFE8F00A3B014 /* ProgrammaticUI.app */;
@@ -215,15 +210,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AEB20302A6EFE8F00A3B014 /* WelcomeViewController.swift in Sources */,
-				2AD897F12A71AC72003B2A47 /* SAButton.swift in Sources */,
 				2AD898082A730B8D003B2A47 /* Statistic.swift in Sources */,
-				2AD898102A77D060003B2A47 /* SALabelToken.swift in Sources */,
 				2A5838612A701B8100E137F8 /* RegisterViewController.swift in Sources */,
-				2AD8980E2A73DB89003B2A47 /* SALabel.swift in Sources */,
 				2AD898002A725B49003B2A47 /* HomeViewController.swift in Sources */,
-				2AD8980C2A73AEEB003B2A47 /* SAImageView.swift in Sources */,
 				2A58385F2A6FD51000E137F8 /* LoginViewController.swift in Sources */,
-				2AD897F52A7242DB003B2A47 /* SATextField.swift in Sources */,
 				2AEB202C2A6EFE8F00A3B014 /* AppDelegate.swift in Sources */,
 				2AEB202E2A6EFE8F00A3B014 /* SceneDelegate.swift in Sources */,
 				2AD8980A2A73982D003B2A47 /* InsertDataViewController.swift in Sources */,
@@ -450,15 +440,14 @@
 			package = 2AD897F82A725707003B2A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
+		2AD4911E2A7BF604003BF5D1 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
 		2AD897F92A725707003B2A47 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AD897F82A725707003B2A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
-		};
-		2AD897FB2A725707003B2A47 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2AD897F82A725707003B2A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
