@@ -7,17 +7,17 @@
 
 import UIKit
 
-class SALabel: UILabel {
-    override init(frame: CGRect) {
+public class SALabel: UILabel {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(text: String, token: SAFontToken) {
+    public convenience init(text: String, token: SAFontToken) {
         self.init(frame: .zero)
         self.text = text
         self.font = token.font
@@ -27,4 +27,3 @@ class SALabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
-

@@ -7,12 +7,13 @@
 
 import UIKit
 import FirebaseAuth
+import DesignSystem
 
 class RegisterViewController: UIViewController {
 
-    private let emailTextField = SATextField(text: "123@123.com", background: .white)
-    private let passwordTextField = SATextField(text: "123456", background: .white)
-    private let titleLabel = SALabel(text: "Register", token: .heading)
+    private let emailTextField = DesignSystem.SATextField(text: "123@123.com", background: .white)
+    private let passwordTextField = DesignSystem.SATextField(text: "123456", background: .white)
+    private let titleLabel = DesignSystem.SALabel(text: "Register", token: .heading)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class RegisterViewController: UIViewController {
         emailTextField.placeholder = "Email"
         passwordTextField.placeholder = "password"
 
-        let registerButton = SAButton(backgroundColor: UIColor(named: "ButtonRegister"), title: "Register", action: UIAction(handler: { register in
+        let registerButton = DesignSystem.SAButton(backgroundColor: UIColor(named: "ButtonRegister"), title: "Register", action: UIAction(handler: { register in
             self.registerAction()
         }))
 

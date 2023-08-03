@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct SAFontToken {
-    static let heading: SAFontToken = .init(size: 20, weight: .regular, bold: false)
-    static let headingHighlight: SAFontToken = .init(size: 20, weight: .regular, bold: true)
-    static let title: SAFontToken = .init(size: 40, weight: .regular, bold: true)
+public struct SAFontToken {
+    public static let heading: SAFontToken = .init(size: 20, weight: .regular, bold: false)
+    public static let headingHighlight: SAFontToken = .init(size: 20, weight: .regular, bold: true)
+    public static let title: SAFontToken = .init(size: 40, weight: .regular, bold: true)
 
     let size: CGFloat
     let weight: UIFont.Weight
@@ -28,4 +28,3 @@ struct SAFontToken {
         return font
     }
 }
-

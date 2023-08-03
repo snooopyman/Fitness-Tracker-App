@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import DesignSystem
 
 class WelcomeViewController: UIViewController {
 
-    private let titleLabel = SALabel(text: "", token: .title)
-    private let imageFitness = SAImageView.fitnessImage
+    private let titleLabel = DesignSystem.SALabel(text: "", token: .title)
+    private let imageFitness = DesignSystem.SAImageView.fitnessImage
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +20,11 @@ class WelcomeViewController: UIViewController {
     }
 
     private func setUp() {
-        let loginButton = SAButton(backgroundColor: UIColor(named: "ButtonLogin"), title: "Login", action: UIAction(handler: { [weak self] _ in
+        let loginButton = DesignSystem.SAButton(backgroundColor: UIColor(named: "ButtonLogin"), title: "Login", action: UIAction(handler: { [weak self] _ in
             self?.nextScreen(controller: LoginViewController())
         }))
 
-        let registerButton = SAButton(backgroundColor: UIColor(named: "ButtonRegister"), title: "Register", action: UIAction(handler: { [weak self] _ in
+        let registerButton = DesignSystem.SAButton(backgroundColor: UIColor(named: "ButtonRegister"), title: "Register", action: UIAction(handler: { [weak self] _ in
             self?.nextScreen(controller: RegisterViewController())
         }))
 

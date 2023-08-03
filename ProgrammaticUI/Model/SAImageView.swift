@@ -7,20 +7,20 @@
 
 import UIKit
 
-class SAImageView: UIImageView {
+public class SAImageView: UIImageView {
 
-    static let fitnessImage = SAImageView(imageNamed: "fitness.png")
+    public static let fitnessImage = SAImageView(imageNamed: "fitness.png")
 
-    override init(image: UIImage?) {
+    public override init(image: UIImage?) {
         super.init(image: image)
         configure()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented.")
     }
 
-    convenience init(imageNamed imageName: String) {
+    public convenience init(imageNamed imageName: String) {
         guard let image = UIImage(named: imageName) else {
             fatalError("No se ha cargado la imagen \(imageName)")
         }
@@ -32,4 +32,3 @@ class SAImageView: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
-

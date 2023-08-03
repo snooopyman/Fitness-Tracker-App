@@ -7,18 +7,18 @@
 
 import UIKit
 
-class SATextField: UITextField {
+public class SATextField: UITextField {
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented.")
     }
 
-    convenience init(text: String, background: UIColor) {
+    public convenience init(text: String, background: UIColor) {
         self.init(frame: .zero)
         self.text = text
         self.backgroundColor = background
