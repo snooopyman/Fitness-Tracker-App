@@ -10,7 +10,6 @@
 		2A081EB12A78091100836168 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2A081EB02A78091100836168 /* FirebaseDatabase */; };
 		2A58385F2A6FD51000E137F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58385E2A6FD51000E137F8 /* LoginViewController.swift */; };
 		2A5838612A701B8100E137F8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5838602A701B8100E137F8 /* RegisterViewController.swift */; };
-		2AD4911F2A7BF604003BF5D1 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD4911E2A7BF604003BF5D1 /* DesignSystem */; };
 		2AD897F72A7255DF003B2A47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD897F62A7255DF003B2A47 /* GoogleService-Info.plist */; };
 		2AD897FA2A725707003B2A47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD897F92A725707003B2A47 /* FirebaseAuth */; };
 		2AD898002A725B49003B2A47 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD897FF2A725B49003B2A47 /* HomeViewController.swift */; };
@@ -21,12 +20,12 @@
 		2AEB20302A6EFE8F00A3B014 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB202F2A6EFE8F00A3B014 /* WelcomeViewController.swift */; };
 		2AEB20352A6EFE9000A3B014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEB20342A6EFE9000A3B014 /* Assets.xcassets */; };
 		2AEB20382A6EFE9000A3B014 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AEB20362A6EFE9000A3B014 /* LaunchScreen.storyboard */; };
+		2AF33BC02A7CED6400C68EC4 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF33BBF2A7CED6400C68EC4 /* DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A58385E2A6FD51000E137F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2A5838602A701B8100E137F8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		2AD4911D2A7BF5AC003BF5D1 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../../DesignSystem; sourceTree = "<group>"; };
 		2AD897F62A7255DF003B2A47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2AD897FF2A725B49003B2A47 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2AD898072A730B8D003B2A47 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		2AEB20342A6EFE9000A3B014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AEB20372A6EFE9000A3B014 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AEB20392A6EFE9000A3B014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AF33BBE2A7CED0F00C68EC4 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../../DesignSystem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AD4911F2A7BF604003BF5D1 /* DesignSystem in Frameworks */,
+				2AF33BC02A7CED6400C68EC4 /* DesignSystem in Frameworks */,
 				2A081EB12A78091100836168 /* FirebaseDatabase in Frameworks */,
 				2AD897FA2A725707003B2A47 /* FirebaseAuth in Frameworks */,
 			);
@@ -73,14 +73,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		2AD4911C2A7BF591003BF5D1 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				2AD4911D2A7BF5AC003BF5D1 /* DesignSystem */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
 		2AD897F22A72420C003B2A47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +91,7 @@
 		2AEB201F2A6EFE8F00A3B014 = {
 			isa = PBXGroup;
 			children = (
-				2AD4911C2A7BF591003BF5D1 /* Module */,
+				2AF33BBD2A7CECEB00C68EC4 /* Modules */,
 				2AEB202A2A6EFE8F00A3B014 /* ProgrammaticUI */,
 				2AEB20292A6EFE8F00A3B014 /* Products */,
 				2A081EAF2A7808E900836168 /* Frameworks */,
@@ -130,6 +122,14 @@
 			path = ProgrammaticUI;
 			sourceTree = "<group>";
 		};
+		2AF33BBD2A7CECEB00C68EC4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2AF33BBE2A7CED0F00C68EC4 /* DesignSystem */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,7 +149,7 @@
 			packageProductDependencies = (
 				2AD897F92A725707003B2A47 /* FirebaseAuth */,
 				2A081EB02A78091100836168 /* FirebaseDatabase */,
-				2AD4911E2A7BF604003BF5D1 /* DesignSystem */,
+				2AF33BBF2A7CED6400C68EC4 /* DesignSystem */,
 			);
 			productName = ProgrammaticUI;
 			productReference = 2AEB20282A6EFE8F00A3B014 /* ProgrammaticUI.app */;
@@ -440,14 +440,14 @@
 			package = 2AD897F82A725707003B2A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		2AD4911E2A7BF604003BF5D1 /* DesignSystem */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DesignSystem;
-		};
 		2AD897F92A725707003B2A47 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AD897F82A725707003B2A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		2AF33BBF2A7CED6400C68EC4 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
